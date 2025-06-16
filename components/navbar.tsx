@@ -15,7 +15,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 dark:bg-background/40 backdrop-blur-sm border-b border-border/40 dark:border-border/20"
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
@@ -70,7 +70,7 @@ export function Navbar() {
               Contact
             </MobileNavLink>
             <div className="pt-4">
-              <Button className="w-full rounded-full">Book Now</Button>
+              <Button className="w-full rounded-full ">Book Now</Button>
             </div>
           </div>
         </motion.div>
