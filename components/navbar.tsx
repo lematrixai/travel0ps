@@ -1,111 +1,145 @@
 "use client"
 
-import * as React from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "./theme-toggle"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { Menu, X } from 'lucide-react'
+import Link from 'next/link'
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 dark:bg-background/40 backdrop-blur-sm border-b border-border/40 dark:border-border/20"
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Tourism</span>
-          </Link>
+    <div className="absolute top-0 left-0 right-0 z-50">
+      <div className={`w-full transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md' : 'bg-transparent'}`}>
+        <div className="container mx-auto px-4 xs:px-6">
+          <div className="flex h-16 xs:h-20 items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2">
+              <div className="relative h-8 w-8 xs:h-10 xs:w-10">
+                <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-lg xs:text-xl font-bold text-primary">T</span>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg xs:text-xl font-bold leading-none">Travel</span>
+                <span className="text-sm xs:text-base font-medium text-primary leading-none">Ops</span>
+              </div>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="/tours">Tours</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
-            <Button variant="outline" size="sm" className="rounded-full">
-              Book Now
-            </Button>
-            <ThemeToggle />
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        <motion.div
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          variants={{
-            open: { opacity: 1, height: "auto" },
-            closed: { opacity: 0, height: 0 }
-          }}
-          className="md:hidden overflow-hidden"
-        >
-          <div className="py-4 space-y-4">
-            <MobileNavLink href="/tours" onClick={() => setIsOpen(false)}>
-              Tours
-            </MobileNavLink>
-            <MobileNavLink href="/services" onClick={() => setIsOpen(false)}>
-              Services
-            </MobileNavLink>
-            <MobileNavLink href="/about" onClick={() => setIsOpen(false)}>
-              About
-            </MobileNavLink>
-            <MobileNavLink href="/contact" onClick={() => setIsOpen(false)}>
-              Contact
-            </MobileNavLink>
-            <div className="pt-4">
-              <Button className="w-full rounded-full ">Book Now</Button>
+            {/* Navigation Controls */}
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative h-9 w-9 xs:h-10 xs:w-10"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <AnimatePresence mode="wait">
+                  {isOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ opacity: 0, rotate: -90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: 90 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <X className="h-5 w-5" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ opacity: 0, rotate: 90 }}
+                      animate={{ opacity: 1, rotate: 0 }}
+                      exit={{ opacity: 0, rotate: -90 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Menu className="h-5 w-5" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.nav>
-  )
-}
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="text-sm font-medium transition-colors hover:text-primary"
-    >
-      {children}
-    </Link>
-  )
-}
-
-function MobileNavLink({
-  href,
-  onClick,
-  children,
-}: {
-  href: string
-  onClick: () => void
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="block text-sm font-medium transition-colors hover:text-primary"
-    >
-      {children}
-    </Link>
+      {/* Menu Card */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              onClick={() => setIsOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="absolute right-4 top-20 xs:top-24 z-50 w-[425px]"
+            >
+              <Card className="overflow-hidden border-0 bg-background/95 backdrop-blur-md shadow-lg">
+                <div className="p-4">
+                  <nav className="space-y-2">
+                    <Link 
+                      href="/tours"
+                      className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium hover:bg-muted transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Tours
+                    </Link>
+                    <Link 
+                      href="/services"
+                      className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium hover:bg-muted transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Services
+                    </Link>
+                    <Link 
+                      href="/about"
+                      className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium hover:bg-muted transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      About
+                    </Link>
+                    <Link 
+                      href="/contact"
+                      className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium hover:bg-muted transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                  </nav>
+                  <div className="mt-4 pt-4 border-t">
+                    <Button className="w-full" size="lg">
+                      Book Your Adventure
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
   )
 } 
