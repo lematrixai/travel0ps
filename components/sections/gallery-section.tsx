@@ -8,59 +8,59 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/
 const galleryImages = [
   {
     id: 1,
-    src: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
-    alt: 'Nungwi Beach Sunset',
-    title: 'Nungwi Beach',
-    description: 'Experience the pristine white sands and crystal-clear waters of Nungwi Beach, where the Indian Ocean meets paradise.'
+    src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    alt: 'Serengeti Plains',
+    title: 'Serengeti National Park',
+    description: 'Witness the vast savannah plains and the incredible Great Migration of wildebeest and zebras.'
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1000',
-    alt: 'Stone Town Architecture',
-    title: 'Stone Town',
-    description: 'Explore the historic heart of Zanzibar, where ancient architecture and rich cultural heritage come together.'
+    src: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1000',
+    alt: 'Mount Kilimanjaro',
+    title: 'Mount Kilimanjaro',
+    description: 'Africa\'s highest peak, offering challenging climbs and breathtaking views from the summit.'
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000',
-    alt: 'Spice Farm Tour',
-    title: 'Spice Tour',
-    description: 'Discover the aromatic world of Zanzibar\'s spice farms, where nature\'s finest flavors come to life.'
+    src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    alt: 'Ngorongoro Crater',
+    title: 'Ngorongoro Crater',
+    description: 'Explore the world\'s largest intact volcanic caldera, home to diverse wildlife and stunning landscapes.'
   },
   {
     id: 4,
-    src: 'https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=1000',
-    alt: 'Jozani Forest',
-    title: 'Jozani Forest',
-    description: 'Venture into the lush greenery of Jozani Forest, home to the rare red colobus monkeys and diverse wildlife.'
+    src: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
+    alt: 'Zanzibar Beaches',
+    title: 'Zanzibar Island',
+    description: 'Experience pristine white sand beaches and crystal-clear turquoise waters of the Indian Ocean.'
   },
   {
     id: 5,
-    src: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
-    alt: 'Prison Island',
-    title: 'Prison Island',
-    description: 'Visit the historic Prison Island, home to giant tortoises and stunning coral reefs.'
+    src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    alt: 'Tarangire National Park',
+    title: 'Tarangire National Park',
+    description: 'Discover ancient baobab trees and large herds of elephants in this unique ecosystem.'
   },
   {
     id: 6,
     src: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1000',
-    alt: 'Forodhani Gardens',
-    title: 'Forodhani Gardens',
-    description: 'Experience the vibrant night market at Forodhani Gardens, a feast for all senses.'
+    alt: 'Stone Town',
+    title: 'Stone Town',
+    description: 'Immerse yourself in the rich cultural heritage and historic architecture of Zanzibar\'s old town.'
   },
   {
     id: 7,
-    src: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000',
-    alt: 'Mnemba Island',
-    title: 'Mnemba Island',
-    description: 'Discover the exclusive Mnemba Island, a private paradise surrounded by coral reefs.'
+    src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    alt: 'Lake Manyara',
+    title: 'Lake Manyara',
+    description: 'Experience the diverse birdlife and tree-climbing lions in this unique national park.'
   },
   {
     id: 8,
-    src: 'https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=1000',
-    alt: 'Kendwa Beach',
-    title: 'Kendwa Beach',
-    description: 'Relax on the pristine shores of Kendwa Beach, known for its perfect sunsets.'
+    src: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
+    alt: 'Selous Game Reserve',
+    title: 'Selous Game Reserve',
+    description: 'Explore one of Africa\'s largest game reserves, known for its wild and remote landscapes.'
   }
 ]
 
@@ -76,10 +76,10 @@ export function GallerySection() {
           className="text-center mb-12 xs:mb-16"
         >
           <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4">
-            Zanzibar Gallery
+            Tanzania Gallery
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore the beauty of Zanzibar through our curated collection of stunning moments
+            Explore the beauty of Tanzania through our curated collection of stunning moments
           </p>
         </motion.div>
 
@@ -94,8 +94,8 @@ export function GallerySection() {
             >
               <Dialog>
                 <DialogTrigger asChild>
-                  <Card className="group overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 h-full">
-                    <div className="relative aspect-square">
+                  <Card className="group overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
+                    <div className="relative h-48 xs:h-56">
                       <Image
                         src={image.src}
                         alt={image.alt}
@@ -103,31 +103,25 @@ export function GallerySection() {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 className="text-lg font-semibold mb-2">{image.title}</h3>
-                        <p className="text-sm text-white/80 line-clamp-2">{image.description}</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="font-semibold text-lg text-white">{image.title}</h3>
                       </div>
                     </div>
                   </Card>
                 </DialogTrigger>
-                <DialogContent className="max-w-3xl p-0 overflow-hidden">
-                  <DialogTitle className="sr-only">
-                    {image.title} - {image.alt}
-                  </DialogTitle>
-                  <div className="relative aspect-[16/9] max-h-[60vh]">
+                <DialogContent className="max-w-3xl">
+                  <DialogTitle className="text-2xl font-bold mb-4">{image.title}</DialogTitle>
+                  <div className="relative h-[400px] w-full">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                      className="object-cover rounded-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold mb-1">{image.title}</h3>
-                    <p className="text-sm text-muted-foreground">{image.description}</p>
-                  </div>
+                  <p className="text-muted-foreground mt-4">{image.description}</p>
                 </DialogContent>
               </Dialog>
             </motion.div>

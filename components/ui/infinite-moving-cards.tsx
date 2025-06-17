@@ -11,6 +11,7 @@ export const InfiniteMovingCards = ({
   speed = "fast",
   pauseOnHover = true,
   className,
+  cover = false,
 }: {
   items: {
     quote: string;
@@ -26,6 +27,7 @@ export const InfiniteMovingCards = ({
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
+  cover?: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLUListElement>(null);
@@ -113,7 +115,7 @@ export const InfiniteMovingCards = ({
               
               {/* Avatar and Rating */}
               <div className="flex items-center gap-4 mb-4">
-                <Avatar className="h-12 w-12">
+                <Avatar className="h-12 w-12 bg-cover">
                   <AvatarImage src={item.avatar} alt={item.name} />
                   <AvatarFallback>{item.name.slice(0, 2)}</AvatarFallback>
                 </Avatar>

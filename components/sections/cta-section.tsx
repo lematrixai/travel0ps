@@ -22,11 +22,11 @@ export function CTASection() {
             className="space-y-6"
           >
             <h2 className="text-3xl xs:text-4xl font-bold">
-              Your Zanzibar Adventure Awaits
+              Your Tanzanian Adventure Awaits
             </h2>
             <p className="text-muted-foreground text-lg">
-              Experience the perfect blend of pristine beaches, rich culture, and unforgettable moments. 
-              Let us craft your dream getaway in paradise.
+              From thrilling safaris to beach getaways, experience the perfect blend of wildlife, culture, and natural beauty. 
+              Let us craft your dream Tanzanian journey.
             </p>
             
             {/* Features */}
@@ -34,22 +34,22 @@ export function CTASection() {
               <div className="flex items-start gap-3">
                 <Calendar className="h-5 w-5 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Flexible Dates</h3>
-                  <p className="text-sm text-muted-foreground">Choose your perfect time</p>
+                  <h3 className="font-semibold">Best Time to Visit</h3>
+                  <p className="text-sm text-muted-foreground">Year-round adventures</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Best Locations</h3>
-                  <p className="text-sm text-muted-foreground">Curated destinations</p>
+                  <h3 className="font-semibold">Prime Locations</h3>
+                  <p className="text-sm text-muted-foreground">From Serengeti to Zanzibar</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Users className="h-5 w-5 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Expert Guides</h3>
-                  <p className="text-sm text-muted-foreground">Local knowledge</p>
+                  <h3 className="font-semibold">Local Experts</h3>
+                  <p className="text-sm text-muted-foreground">Guided by experience</p>
                 </div>
               </div>
             </div>
@@ -68,11 +68,11 @@ export function CTASection() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold">Start Planning Today</h3>
                 <p className="text-muted-foreground">
-                  Get in touch with our travel experts to create your perfect Zanzibar experience.
+                  Get in touch with our travel experts to create your perfect Tanzanian experience.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="w-full sm:w-auto">
-                    View Packages
+                    View Safari Packages
                   </Button>
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
                     Contact Us

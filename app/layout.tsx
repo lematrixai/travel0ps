@@ -10,19 +10,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Tourism Website",
-  description: "Your gateway to unforgettable travel experiences",
-  keywords: ["travel", "tourism", "vacation", "adventure", "destinations"],
-  authors: [{ name: "Your Name" }],
+  title: "Tanzania Tourism",
+  description: "Your gateway to unforgettable Tanzanian adventures - from Serengeti safaris to Zanzibar beaches",
+  keywords: ["Tanzania", "Safari", "Kilimanjaro", "Zanzibar", "Serengeti", "Ngorongoro", "Wildlife", "Adventure"],
+  authors: [{ name: "TravelOps" }],
   openGraph: {
-    title: "Tourism Website",
-    description: "Your gateway to unforgettable travel experiences",
+    title: "Tanzania Tourism",
+    description: "Your gateway to unforgettable Tanzanian adventures - from Serengeti safaris to Zanzibar beaches",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tourism Website",
-    description: "Your gateway to unforgettable travel experiences",
+    title: "Tanzania Tourism",
+    description: "Your gateway to unforgettable Tanzanian adventures - from Serengeti safaris to Zanzibar beaches",
   },
 };
 

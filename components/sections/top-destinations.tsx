@@ -8,33 +8,33 @@ import { MapPin, Star } from 'lucide-react'
 const destinations = [
   {
     id: 1,
-    name: 'Stone Town, Zanzibar',
-    image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1000',
-    description: 'Historic heart of Zanzibar with rich cultural heritage',
+    name: 'Serengeti National Park',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    description: 'Home to the Great Migration and diverse wildlife',
     rating: 4.9,
     reviews: 1243
   },
   {
     id: 2,
-    name: 'Nungwi Beach',
-    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
-    description: 'Crystal clear waters and pristine white sand beaches',
+    name: 'Mount Kilimanjaro',
+    image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1000',
+    description: 'Africa\'s highest peak and iconic climbing destination',
     rating: 4.8,
     reviews: 986
   },
   {
     id: 3,
-    name: 'Prison Island',
-    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000',
-    description: 'Home to giant tortoises and stunning coral reefs',
+    name: 'Ngorongoro Crater',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    description: 'World\'s largest intact volcanic caldera',
     rating: 4.7,
     reviews: 856
   },
   {
     id: 4,
-    name: 'Jozani Forest',
-    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000',
-    description: 'Lush forest reserve with rare red colobus monkeys',
+    name: 'Zanzibar Island',
+    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
+    description: 'Tropical paradise with rich cultural heritage',
     rating: 4.9,
     reviews: 723
   }
@@ -52,10 +52,10 @@ export function TopDestinations() {
           className="text-center mb-12 xs:mb-16"
         >
           <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4">
-            Top Destinations in Zanzibar
+            Top Destinations in Tanzania
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Discover the most beautiful and captivating places in Zanzibar
+            Discover the most beautiful and captivating places in Tanzania
           </p>
         </motion.div>
 

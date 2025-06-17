@@ -9,47 +9,47 @@ import { Star, Clock, Users } from 'lucide-react'
 const tours = [
   {
     id: 1,
-    title: 'Spice Island Tour',
-    image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1000',
-    price: 1299,
+    title: 'Serengeti Safari Adventure',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    price: 2499,
     duration: '7 days',
     groupSize: 'Max 12',
     rating: 4.9,
     reviews: 156,
-    description: 'Experience the aromatic world of Zanzibar spices and local culture'
+    description: 'Experience the Great Migration and witness the Big Five in their natural habitat'
   },
   {
     id: 2,
-    title: 'Dolphin Safari & Snorkeling',
-    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
-    price: 1499,
-    duration: '3 days',
-    groupSize: 'Max 15',
+    title: 'Kilimanjaro Summit Climb',
+    image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=1000',
+    price: 3299,
+    duration: '8 days',
+    groupSize: 'Max 10',
     rating: 4.8,
     reviews: 98,
-    description: 'Swim with dolphins and explore vibrant coral reefs'
+    description: 'Conquer Africa\'s highest peak with expert guides and support team'
   },
   {
     id: 3,
-    title: 'Stone Town Cultural Tour',
-    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000',
-    price: 899,
-    duration: '2 days',
-    groupSize: 'Max 10',
+    title: 'Ngorongoro Wildlife Safari',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1000',
+    price: 1899,
+    duration: '4 days',
+    groupSize: 'Max 8',
     rating: 4.9,
     reviews: 87,
-    description: 'Discover the rich history and architecture of Stone Town'
+    description: 'Explore the world\'s largest intact volcanic caldera and its diverse wildlife'
   },
   {
     id: 4,
-    title: 'Luxury Beach Getaway',
+    title: 'Zanzibar Beach & Culture',
     image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000',
     price: 1699,
-    duration: '5 days',
-    groupSize: 'Max 8',
+    duration: '6 days',
+    groupSize: 'Max 12',
     rating: 4.7,
     reviews: 64,
-    description: 'Exclusive beach resort experience with private tours'
+    description: 'Combine beach relaxation with cultural experiences in Stone Town'
   }
 ]
 
@@ -65,10 +65,10 @@ export function TopTours() {
           className="text-center mb-12 xs:mb-16"
         >
           <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4">
-            Popular Zanzibar Tours
+            Popular Tanzania Tours
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose from our carefully curated selection of unforgettable Zanzibar experiences
+            Choose from our carefully curated selection of unforgettable Tanzanian experiences
           </p>
         </motion.div>
 
