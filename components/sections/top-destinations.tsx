@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { MapPin, Star } from 'lucide-react'
+import { useState } from 'react'
 
 const destinations = [
   {
@@ -70,12 +71,21 @@ export function TopDestinations() {
             >
               <Card className="group overflow-hidden h-full hover:shadow-lg transition-all duration-300">
                 <div className="relative h-48 xs:h-56">
+                  <div className="absolute inset-0 bg-muted animate-pulse" />
                   <Image
                     src={destination.image}
                     alt={destination.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    onLoadingComplete={(img) => {
+                      img.classList.remove('opacity-0')
+                    }}
+                    onLoad={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.classList.remove('opacity-0')
+                    }}
+                    style={{ opacity: 0 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

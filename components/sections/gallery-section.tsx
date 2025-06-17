@@ -96,13 +96,23 @@ export function GallerySection() {
                 <DialogTrigger asChild>
                   <Card className="group overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300">
                     <div className="relative h-48 xs:h-56">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      />
+                      <div className="relative h-full w-full">
+                        <div className="absolute inset-0 bg-muted animate-pulse" />
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          fill
+                          className="object-cover transition-all duration-300 group-hover:scale-105 opacity-0"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                          onLoadingComplete={(img) => {
+                            img.classList.remove('opacity-0')
+                          }}
+                          onLoad={(e) => {
+                            const target = e.target as HTMLImageElement
+                            target.classList.remove('opacity-0')
+                          }}
+                        />
+                      </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4">
                         <h3 className="font-semibold text-lg text-white">{image.title}</h3>

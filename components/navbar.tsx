@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -31,12 +32,14 @@ export function Navbar() {
               <div className="relative h-8 w-8 xs:h-10 xs:w-10">
                 <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg xs:text-xl font-bold text-primary">T</span>
+                  <span className="text-lg xs:text-xl font-bold text-primary">
+                    <Image src="/logo.png" alt="logo" width={32} height={32} />
+                  </span>
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg xs:text-xl font-bold leading-none">Travel</span>
-                <span className="text-sm xs:text-base font-medium text-primary leading-none">Ops</span>
+                <span className="text-lg xs:text-xl font-bold leading-none">Luxury</span>
+                <span className="text-sm xs:text-base font-medium text-primary leading-none">Travel</span>
               </div>
             </Link>
 
